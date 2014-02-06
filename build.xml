@@ -3,15 +3,15 @@
     <!--this file was created by Eclipse Runnable JAR Export Wizard-->
     <!--ANT 1.7 is required                                        -->
     <target name="create_run_jar">
-        <jar destfile="/Users/jimmylee/Code/Hsu/workspace/Peroxitracker/PeroJava.jar">
+        <jar destfile="PeroJava.jar">
             <manifest>
                 <attribute name="Main-Class" value="peroJava.Main"/>
                 <attribute name="Class-Path" value=". PeroJava_lib/ij148q.jar"/>
             </manifest>
-            <fileset dir="/Users/jimmylee/Code/Hsu/workspace/Peroxitracker/bin"/>
+            <fileset dir="bin"/>
         </jar>
-        <delete dir="/Users/jimmylee/Code/Hsu/workspace/Peroxitracker/PeroJava_lib"/>
-        <mkdir dir="/Users/jimmylee/Code/Hsu/workspace/Peroxitracker/PeroJava_lib"/>
-        <copy file="/Users/jimmylee/Code/Hsu/workspace/Peroxitracker/lib/ij148q.jar" todir="/Users/jimmylee/Code/Hsu/workspace/Peroxitracker/PeroJava_lib"/>
+        <delete dir="PeroJava_lib"/>
+        <mkdir dir="PeroJava_lib"/>
+        <copy file="lib/ij148q.jar" todir="PeroJava_lib"/>
     </target>
 </project>
