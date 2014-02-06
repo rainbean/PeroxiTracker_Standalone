@@ -217,6 +217,12 @@ public class Mean_Shift implements ExtendedPlugInFilter {
 		}
 	}
 
+    // implement abstract method inherited from ExtendedPlugInFilter
+    public int showDialog(ImagePlus imp, String command, PlugInFilterRunner pfr)
+    {
+        return 0;
+    }
+
     // ***** Removed for Azure *****
     //	public int showDialog(ImagePlus imp, String command, PlugInFilterRunner pfr) {
     //		GenericDialog gd = new GenericDialog("Mean Shift Filter");
