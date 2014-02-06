@@ -3,9 +3,9 @@ package peroJava;
 import ij.*;
 import ij.process.*;
 import ij.io.*;
+import ij.plugin.ContrastEnhancer;
 
 public class Well {
-	
 	
 	private ImagePlus imp;
 	
@@ -23,8 +23,13 @@ public class Well {
 	
 	public void contrastEnhance() {
 	    // ***** This is what causes the problem????? *****
-	        IJ.run(imp, "Enhance Contrast", "saturated=0.35 normalize");
-		imp.updateImage();
+		//IJ.run(imp, "Enhance Contrast", "saturated=0.35 normalize");
+		double saturated = 0.35;
+		ContrastEnhancer contrastEnhancer = new ContrastEnhancer();
+		contrastEnhancer.setNormalize(true); // requires latest ImageJ library
+		contrastEnhancer.stretchHistogram(imp, saturated);
+		imp.getProcessor().resetMinAndMax();
+		imp.updateImage();		
 	}
 	
 	public void meanShift(int spacial, float color) {

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project Peroxitracker with libraries in sub-folder">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="/Users/jimmylee/Code/Hsu/workspace/Peroxitracker/PeroJava.jar">
+            <manifest>
+                <attribute name="Main-Class" value="peroJava.Main"/>
+                <attribute name="Class-Path" value=". PeroJava_lib/ij148q.jar"/>
+            </manifest>
+            <fileset dir="/Users/jimmylee/Code/Hsu/workspace/Peroxitracker/bin"/>
+        </jar>
+        <delete dir="/Users/jimmylee/Code/Hsu/workspace/Peroxitracker/PeroJava_lib"/>
+        <mkdir dir="/Users/jimmylee/Code/Hsu/workspace/Peroxitracker/PeroJava_lib"/>
+        <copy file="/Users/jimmylee/Code/Hsu/workspace/Peroxitracker/lib/ij148q.jar" todir="/Users/jimmylee/Code/Hsu/workspace/Peroxitracker/PeroJava_lib"/>
+    </target>
+</project>
