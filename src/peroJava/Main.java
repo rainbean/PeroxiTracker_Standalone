@@ -26,9 +26,6 @@ public class Main {
 		//well1.saveAs(file.getParent(), "/enhanced", name);
 
 		// version 2: save to FITC / DAPI sub-folder per filename
-		new File(file.getParent(), "FITC").mkdir();
-		new File(file.getParent(), "DAPI").mkdir();
-		
 		if (name.contains("FITC")) {
 			well1.saveAs(file.getParent(), "/FITC/", name);
 		} else if (name.contains("DAPI")) {

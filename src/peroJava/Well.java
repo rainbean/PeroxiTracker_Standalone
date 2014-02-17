@@ -56,6 +56,7 @@ public class Well {
 	
 	public void saveAs(String path, String subdir, String name){
 		FileSaver fs = new FileSaver(this.imp);
+		String s = path + subdir + name;
 		fs.saveAsPng(path + subdir + name);
 	}
 }
