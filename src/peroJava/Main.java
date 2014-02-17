@@ -22,8 +22,20 @@ public class Main {
 //Uncomment for executing Mean-Shift --
 		well1.meanShift(sr, cr);
 		
-		//well1.showImage();
-		well1.saveAs(file.getParent(), "/enhanced", name);
+		// version 1: save with additional prefix 'enhanced'
+		//well1.saveAs(file.getParent(), "/enhanced", name);
+
+		// version 2: save to FITC / DAPI sub-folder per filename
+		new File(file.getParent(), "FITC").mkdir();
+		new File(file.getParent(), "DAPI").mkdir();
+		
+		if (name.contains("FITC")) {
+			well1.saveAs(file.getParent(), "/FITC/", name);
+		} else if (name.contains("DAPI")) {
+			well1.saveAs(file.getParent(), "/DAPI/", name);
+		} else {
+			well1.saveAs(file.getParent(), "/enhanced", name);
+		}
 	}
 	
 	public Main(String path) {
