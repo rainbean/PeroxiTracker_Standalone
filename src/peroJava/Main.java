@@ -10,9 +10,7 @@ public class Main {
 	private int cr = 25;
 	private String path;
 	
-	private void process(File file) {
-		System.out.println("Processing " + file.getName() + " ...");
-		
+	private void process(File file) {		
 		String name = file.getName();
 		
 		ImagePlus imp = IJ.openImage(file.getPath());
@@ -51,7 +49,6 @@ public class Main {
 		} else {
 			process(file);
 		}
-		System.out.println("Completed.");
 	}
 	
 	public static void main(String[] args) {
